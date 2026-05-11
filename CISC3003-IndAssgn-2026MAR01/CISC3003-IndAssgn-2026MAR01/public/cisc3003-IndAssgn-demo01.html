@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Demo 01 - Responsive One‑Page Layout | MA IAT TIM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Demo 01 shows a clean, semantic one‑page layout with responsive sections and reusable components."/>
+  <link rel="stylesheet" href="../css/cisc3003-IndAssgn-demo01.css"/>
+</head>
+<body>
+  <!-- Global nav (consistent across pages) -->
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="cisc3003-IndAssgn-home.html">MA IAT TIM</a>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="cisc3003-IndAssgn-home.html#about">About</a></li>
+          <li><a href="cisc3003-IndAssgn-home.html#projects">Projects</a></li>
+          <li><a href="cisc3003-IndAssgn-profile.html">Profile</a></li>
+          <li><a href="cisc3003-IndAssgn-summary.html">Summary</a></li>
+          <li><a href="cisc3003-IndAssgn-showcase.html">Showcase</a></li>
+          <li><a href="cisc3003-IndAssgn-qualification.html">Qualification</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Demo 01 — Responsive One‑Page Layout</h1>
+        <p class="subtitle">
+          A semantic, mobile‑first page demonstrating a hero section, cards, gallery, and consistent components.
+        </p>
+        <div class="cta-group">
+          <a class="btn primary" href="#result">See Result</a>
+          <a class="btn ghost" href="#tech">Tech Stack</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="images/project01.jpg" alt="Demo 01 preview thumbnail"/>
+      </figure>
+    </section>
+
+    <!-- Overview -->
+    <section class="section container">
+      <h2>Overview</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Goals</h3>
+          <ul>
+            <li>Apply semantic HTML for structure and accessibility.</li>
+            <li>Build responsive sections with a shared design system.</li>
+            <li>Keep styles clean and maintainable.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Features</h3>
+          <ul>
+            <li>Sticky header & skip‑link for a11y.</li>
+            <li>Reusable buttons (primary / ghost / small).</li>
+            <li>Responsive cards and gallery layout.</li>
+          </ul>
+        </article>
+        <article class="card" id="tech">
+          <h3>Tech Stack</h3>
+          <ul>
+            <li>HTML5 + semantic landmarks</li>
+            <li>CSS custom properties, Flexbox/Grid</li>
+            <li>No JS required</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Accessibility checklist -->
+    <section class="section container">
+      <h2>Accessibility Checklist</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Basics</h3>
+          <ul>
+            <li>Language set on <code>&lt;html lang="en"&gt;</code></li>
+            <li>Descriptive <code>alt</code> text on images</li>
+            <li>Logical heading order</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Navigation</h3>
+          <ul>
+            <li>Skip‑to‑content link</li>
+            <li>Keyboard‑navigable menu</li>
+            <li>Visible focus via browser default</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Color</h3>
+          <ul>
+            <li>High‑contrast text on dark background</li>
+            <li>Links visually distinct</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Result -->
+    <section id="result" class="section container">
+      <h2>Result</h2>
+      <p>The final layout renders properly from mobile to desktop with consistent spacing and card rhythm.</p>
+      <figure class="block">
+        <img src="images/project01.jpg" alt="Rendered result of Demo 01 layout"/>
+      </figure>
+      <div class="cta-group">
+        <a class="btn small" href="cisc3003-IndAssgn-home.html#projects">Back to Projects</a>
+        <a class="btn small" href="cisc3003-IndAssgn-demo02.html">Open Demo 02</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>CISC3003 Web Programming - 2025: Student ID dc226328 - Student Name MA IAT TIM</p>
+      <p>&copy; 2026 MA IAT TIM</p>
+    </div>
+  </footer>
+</body>
+</html>

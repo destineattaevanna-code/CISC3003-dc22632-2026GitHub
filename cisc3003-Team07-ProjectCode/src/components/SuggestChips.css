@@ -1,0 +1,33 @@
+/* src/components/SuggestChips.css */
+.chips__wrap { margin-top: 12px; }
+
+.chips__title {
+  font-size: 13px;
+  color: #666;
+  margin-right: 8px;
+}
+
+.chips__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.chips__item {
+  background: #f5f7fb;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  max-width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chips__item:hover { background: #eaf0ff; border-color: #cfe0ff; }
+.chips__item:active { transform: translateY(1px); }

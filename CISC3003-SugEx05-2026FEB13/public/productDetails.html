@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Details | SugEx05 | CISC3003</title>
+  <meta name="description" content="單一商品詳情頁，含圖片畫廊、數量選擇與加入購物車。" />
+  <link rel="stylesheet" href="../css/cisc3003-SugEx05-demo.css" />
+  <link rel="icon" href="../images/logo.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./cisc3003-SugEx05-demo.html" aria-label="回到首頁">
+        <img src="../images/logo.png" alt="商店 Logo" class="logo" />
+      </a>
+      <nav class="nav-links" aria-label="主選單">
+        <ul>
+          <li><a href="./cisc3003-SugEx05-demo.html#home">Home</a></li>
+          <li><a href="./allProducts.html">All Products</a></li>
+          <li><a class="active" href="./productDetails.html">Product Details</a></li>
+          <li><a href="./cisc3003-SugEx05-demo.html#offers">Offers</a></li>
+          <li><a href="./cisc3003-SugEx05-demo.html#brands">Brands</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="cart-link" href="#" aria-label="購物車">
+          <img src="../images/cart.png" alt="購物車" />
+        </a>
+        <button class="menu-toggle" aria-label="切換主選單">
+          <img src="../images/menu.png" alt="選單" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Details -->
+  <section class="section">
+    <div class="container product-details">
+      <div class="gallery">
+        <img id="mainImg" src="../images/product-1.jpg" alt="主圖：商品 1" />
+        <div class="thumbs">
+          <img class="thumb active" src="../images/product-1.jpg" alt="縮圖 1" data-full="../images/product-1.jpg" />
+          <img class="thumb" src="../images/product-2.jpg" alt="縮圖 2" data-full="../images/product-2.jpg" />
+          <img class="thumb" src="../images/product-3.jpg" alt="縮圖 3" data-full="../images/product-3.jpg" />
+          <img class="thumb" src="../images/product-4.jpg" alt="縮圖 4" data-full="../images/product-4.jpg" />
+        </div>
+      </div>
+
+      <div class="info">
+        <h1>明星商品 1</h1>
+        <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+        <p class="price">$399</p>
+        <p class="desc">
+          極簡設計、舒適材質與可靠品質，適合日常使用。此頁為示範，實際內容可依你主題調整。
+        </p>
+
+        <div class="options">
+          <label for="qty">數量</label>
+          <input id="qty" type="number" min="1" value="1" />
+        </div>
+
+        <div class="cta-group">
+          <a class="btn btn-primary" href="#">加入購物車</a>
+          <a class="btn btn-outline" href="./allProducts.html">回到所有商品</a>
+        </div>
+
+        <div class="meta">
+          <p><strong>分類：</strong>時尚穿搭</p>
+          <p><strong>標籤：</strong>#新品 #人氣 #推薦</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">你可能也喜歡</h2>
+      <div class="grid grid-4">
+        <article class="card product">
+          <img src="../images/product-5.jpg" alt="相關商品 5" />
+          <h3>相關商品 5</h3>
+          <p class="price">$239</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-6.jpg" alt="相關商品 6" />
+          <h3>相關商品 6</h3>
+          <p class="price">$189</p>
+          <p class="rating" aria-label="評分 3/5">★★★☆☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-7.jpg" alt="相關商品 7" />
+          <h3>相關商品 7</h3>
+          <p class="price">$339</p>
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-8.jpg" alt="相關商品 8" />
+          <h3>相關商品 8</h3>
+          <p class="price">$279</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Download Our App</h4>
+        <p>下載行動 App，隨時隨地輕鬆購物</p>
+        <div class="app-badges">
+          <img src="../images/play-store.png" alt="Google Play" />
+          <img src="../images/app-store.png" alt="App Store" />
+        </div>
+      </div>
+      <div class="footer-col">
+        <img src="../images/logo-white.png" alt="白色 Logo" class="footer-logo" />
+        <p>現代、乾淨、好逛好買的電商示範網站。</p>
+      </div>
+      <div class="footer-col">
+        <h4>Useful Links</h4>
+        <ul class="links">
+          <li><a href="./allProducts.html">All Products</a></li>
+          <li><a href="./productDetails.html">Product Details</a></li>
+          <li><a href="./cisc3003-SugEx05-demo.html#offers">Offers</a></li>
+          <li><a href="./cisc3003-SugEx05-demo.html#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul class="links">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>CISC3003 Web Programming - 2026: <strong>dc226328 - Ma Iat Tim</strong></p>
+      <p>Images used for educational purposes. See <em>images/img-credit.txt</em></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script defer>
+    // 產品詳情頁：點縮圖切換主圖
+    window.addEventListener('DOMContentLoaded', () => {
+      const main = document.getElementById('mainImg');
+      const thumbs = document.querySelectorAll('.thumb');
+      thumbs.forEach(t => {
+        t.addEventListener('click', () => {
+          thumbs.forEach(x => x.classList.remove('active'));
+          t.classList.add('active');
+          const full = t.getAttribute('data-full');
+          if (full && main) main.src = full;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

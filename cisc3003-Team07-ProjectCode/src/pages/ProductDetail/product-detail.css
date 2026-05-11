@@ -1,0 +1,440 @@
+.pd-page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 16px 12px 100px;
+  position: relative;
+}
+
+.pd-breadcrumb {
+  margin-bottom: 16px;
+  font-size: 13px;
+}
+
+/* ===== HERO ===== */
+.pd-hero {
+  align-items: stretch;
+}
+.pd-hero-tilt, .pd-hero-tilt .tilt-3d-inner, .pd-hero-spot { height: 100%; }
+.pd-hero-spot { border-radius: 24px; }
+.pd-hero-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(31, 19, 56, 0.18);
+  background-size: 200% 200%;
+  animation: isv-gradient-pan 9s ease-in-out infinite;
+}
+.pd-hero-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+}
+.pd-hero-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transform: scale(1.02);
+  transition: transform 1.2s cubic-bezier(.2,.7,.3,1);
+  animation: isv-fade-in 0.6s ease both;
+}
+.pd-hero-tilt:hover .pd-hero-img-wrap img {
+  transform: scale(1.08);
+}
+.pd-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(255,255,255,0.25), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.35) 100%);
+  pointer-events: none;
+}
+.pd-hero-emoji {
+  position: absolute;
+  z-index: 4;
+  bottom: 18px;
+  right: 18px;
+  width: 76px;
+  height: 76px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: isv-float 6s ease-in-out infinite;
+}
+.pd-hero-badge {
+  position: absolute;
+  z-index: 5;
+  top: 18px;
+  left: 18px;
+  background: linear-gradient(135deg, #fff, #fadcff);
+  color: #722ed1;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 18px rgba(114, 46, 209, 0.28);
+}
+
+/* ===== specs strip ===== */
+.pd-quick-strip {
+  margin-top: 14px !important;
+}
+.pd-stat {
+  background: #fff;
+  border: 1px solid #f0e6ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+.pd-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(114, 46, 209, 0.12);
+}
+.pd-stat-k {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.pd-stat-v {
+  font-weight: 700;
+  color: #22075e;
+  font-size: 14px;
+}
+
+/* ===== buy panel ===== */
+.pd-cat-tag {
+  font-size: 13px;
+  padding: 4px 12px;
+}
+.pd-title {
+  font-size: 38px !important;
+  font-weight: 800 !important;
+  margin-top: 8px !important;
+  margin-bottom: 6px !important;
+  line-height: 1.15 !important;
+}
+.pd-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 10px 0 22px;
+}
+.pd-price {
+  font-size: 36px;
+  font-weight: 900;
+  background: linear-gradient(120deg, #722ed1, #eb2f96);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+}
+
+.pd-buy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: linear-gradient(160deg, #faf5ff 0%, #fff 80%);
+  border: 1px solid #efe0ff;
+  border-radius: 16px;
+}
+.pd-buy-add {
+  background: linear-gradient(135deg, #722ed1, #eb2f96) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+}
+.pd-buy-add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(114, 46, 209, 0.4) !important;
+}
+.pd-buy-now {
+  font-weight: 700;
+  color: #722ed1 !important;
+  border-color: #d3adf7 !important;
+}
+.pd-buy-now:hover {
+  border-color: #722ed1 !important;
+  background: #f9f0ff !important;
+}
+.pd-buy-fav {
+  color: #eb2f96 !important;
+  border-color: #ffadd2 !important;
+}
+.pd-buy-fav.is-fav {
+  background: #fff0f6 !important;
+  border-color: #eb2f96 !important;
+  box-shadow: 0 0 0 4px rgba(235, 47, 150, 0.15);
+}
+
+.pd-trust {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* ===== sections ===== */
+.pd-section {
+  display: block;
+  margin-top: 72px;
+  scroll-margin-top: 80px;
+}
+/* The first section ("What you get") needs extra breathing room from the hero. */
+.pd-hero + .pd-section,
+.pd-hero ~ .pd-section:first-of-type {
+  margin-top: 96px;
+}
+.pd-section-title {
+  margin-bottom: 22px !important;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+}
+.pd-section-title::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 4px;
+  background: linear-gradient(90deg, #722ed1, #eb2f96);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Give the hero some extra bottom padding so the next section has clear separation. */
+.pd-hero {
+  padding-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .pd-section { margin-top: 48px; }
+  .pd-hero + .pd-section,
+  .pd-hero ~ .pd-section:first-of-type { margin-top: 64px; }
+  .pd-section-title { font-size: 22px !important; }
+}
+
+/* highlights (plain div) */
+.pd-highlight-card {
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  height: 100%;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+}
+.pd-highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(114, 46, 209, 0.12);
+  border-color: #efe0ff;
+}
+.pd-highlight-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f9f0ff, #fff0f6);
+  color: #722ed1;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+/* about card */
+.pd-about-card {
+  border-radius: 16px !important;
+  background: linear-gradient(160deg, #faf5ff 0%, #fff 70%) !important;
+  border: 1px solid #efe0ff !important;
+}
+.pd-about-emoji {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  font-size: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 200% 200%;
+  animation: isv-gradient-pan 8s ease-in-out infinite;
+  box-shadow: 0 14px 28px rgba(31, 19, 56, 0.18);
+  color: #fff;
+}
+.pd-about-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: #555;
+  line-height: 1.85;
+}
+.pd-about-list li::marker {
+  color: #b37feb;
+}
+
+/* faq */
+.pd-faq {
+  background: #fff !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+}
+.pd-faq .ant-collapse-item {
+  border-color: #f0e6ff !important;
+}
+.pd-faq .ant-collapse-header {
+  padding: 14px 16px !important;
+}
+
+/* related (now plain divs, not AntD Card) */
+.pd-related-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 100%;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+  outline: none;
+}
+.pd-related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(114, 46, 209, 0.18);
+  border-color: #d3adf7;
+}
+.pd-related-card:focus-visible {
+  border-color: #722ed1;
+  box-shadow: 0 0 0 3px rgba(114, 46, 209, 0.25);
+}
+.pd-related-body {
+  padding: 12px 14px 14px;
+}
+.pd-related-cover {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  background-size: 200% 200%;
+  animation: isv-gradient-pan 9s ease-in-out infinite;
+}
+.pd-related-cover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s cubic-bezier(.2,.7,.3,1);
+}
+.pd-related-card:hover .pd-related-cover img {
+  transform: scale(1.1);
+}
+.pd-related-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.32) 100%);
+  pointer-events: none;
+}
+.pd-related-emoji {
+  position: absolute;
+  z-index: 3;
+  bottom: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+}
+
+/* sticky bottom bar */
+.pd-sticky-bar {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(146, 84, 222, 0.15);
+  border-radius: 999px;
+  padding: 8px 8px 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 18px 36px rgba(31, 19, 56, 0.18);
+  z-index: 80;
+  max-width: 720px;
+  margin: 0 auto;
+  animation: isv-fade-up 0.5s 0.4s cubic-bezier(.2,.7,.3,1) both;
+}
+.pd-sticky-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.pd-sticky-emoji {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #722ed1, #eb2f96);
+  color: #fff;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.pd-sticky-name {
+  font-weight: 700;
+  color: #22075e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 30vw;
+}
+.pd-sticky-price {
+  font-size: 12px;
+  color: #888;
+}
+.pd-sticky-cta {
+  background: linear-gradient(135deg, #722ed1, #eb2f96) !important;
+  border: none !important;
+  border-radius: 999px !important;
+  font-weight: 700;
+}
+
+/* ===== responsive ===== */
+@media (max-width: 768px) {
+  .pd-title { font-size: 28px !important; }
+  .pd-price { font-size: 28px; }
+  .pd-hero-card { min-height: 280px; }
+  .pd-hero-img-wrap { min-height: 280px; }
+  .pd-hero-emoji { width: 56px; height: 56px; font-size: 36px; border-radius: 16px; }
+}

@@ -1,0 +1,102 @@
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Own the scroll on the root element so the sticky app header never fights
+   nested overflow containers. Fixes header-jitter + double-scrollbar. */
+html {
+  overflow-y: scroll;       /* always reserve gutter so layout is stable */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Ant Layout sets overflow on the root layout by default — neutralise it */
+.ant-layout,
+.ant-layout-content {
+  overflow: visible !important;
+}
+
+/* Silkier scrolling using a modern scrollbar */
+html, body {
+  scrollbar-gutter: stable both-edges;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d3adf7 0%, #9254de 100%);
+  border-radius: 6px;
+  border: 2px solid #f5f5f5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b37feb 0%, #722ed1 100%);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.row {
+  margin: 30px 0;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes flyIn-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flyIn-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flyInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flyInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

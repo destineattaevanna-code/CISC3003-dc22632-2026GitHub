@@ -1,0 +1,147 @@
+.setting-page {
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 4vh 5% 6vh;
+}
+
+.setting-header {
+    margin-bottom: 4vh;
+    padding-bottom: 2vh;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.setting-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px !important;
+    color: #111;
+    letter-spacing: -0.5px;
+}
+
+.setting-header p {
+    color: #666;
+    font-size: 16px;
+    margin: 0;
+}
+
+.setting-row {
+    display: flex;
+    padding: 2.5vh 0;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 4%;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-info {
+    flex: 0 0 30%;
+    min-width: 0;
+    max-width: 30%;
+}
+
+.setting-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0 !important;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.setting-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.setting-control {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.setting-control .ant-form-item {
+    margin-bottom: 0;
+}
+
+.setting-control .ant-select-selector,
+.setting-control .ant-input {
+    border-radius: 8px !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+}
+
+.setting-control .ant-select-selection-item {
+    line-height: 32px !important;
+}
+
+.dynamic-list-row {
+    background: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s ease;
+}
+
+.dynamic-list-row:hover {
+    background: #f5f5f5;
+    border-color: #e5e5e5;
+}
+
+.setting-submit {
+    margin-top: 4vh;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.setting-submit .ant-btn-primary {
+    height: 48px;
+    padding: 0 40px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(114, 46, 209, 0.2);
+    transition: all 0.3s ease;
+}
+
+.setting-submit .ant-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(114, 46, 209, 0.3);
+}
+
+/* Topic mode switch: Precise = purple, Broad = blue */
+.topic-mode-switch.ant-switch {
+    background: #722ed1;
+}
+
+.topic-mode-switch.ant-switch-checked {
+    background: #1890ff !important;
+}
+
+.spin-container {
+    min-height: 60vh;
+}
+
+@media (max-width: 768px) {
+    .setting-page {
+        width: 95%;
+        max-width: 95%;
+        padding: 3vh 3% 5vh;
+    }
+
+    .setting-row {
+        flex-direction: column;
+        gap: 2vh;
+        padding: 2vh 0;
+    }
+    
+    .setting-info {
+        flex: none;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,77 @@
+/* cisc3003-SugEx04-demo.css  Author: MA IAT TIM (dc226328) */
+:root{
+  --bg:#fff; --text:#222; --muted:#666; --brand:#ff523b;
+  --line:#eee; --card:#fafafa;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
+img{max-width:100%;display:block}
+.container{width:min(1100px,92%);margin:0 auto}
+
+/* Header */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+.header-wrap{display:flex;align-items:center;gap:14px;justify-content:space-between;padding:10px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand-logo{width:36px;height:36px}
+.brand-name{font-weight:800;letter-spacing:.3px}
+.brand-tag{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:12px;flex-wrap:wrap}
+.nav-link{padding:8px 10px;text-decoration:none;color:#444;border-radius:8px}
+.nav-link:hover{background:#f4f4f4}
+.nav-link.active{background:#ffe4df;color:#000}
+.cart img{width:24px;height:24px}
+.menu{display:none;border:0;background:transparent}
+
+/* Hero */
+.hero{padding:40px 0;background:#fdf2f0;border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:20px}
+.hero h1{margin:0 0 8px;font-size:40px;line-height:1.15}
+.lead{color:#444;margin:0 0 16px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 16px;border-radius:10px;font-weight:700}
+
+/* Sections */
+.section{padding:36px 0}
+.section-title{margin:0 0 12px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{border:1px solid var(--line);background:#fff;border-radius:14px;overflow:hidden}
+.card figcaption{padding:10px 12px;color:#333;font-weight:700}
+.products .product{border:1px solid var(--line);background:#fff;border-radius:14px;padding:10px}
+.products .product h3{margin:8px 0 6px;font-size:16px}
+.products .product .price{color:var(--brand);font-weight:700;margin:0}
+.products.alt{background:#f9f9f9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Offer */
+.offer{background:#fff7f6;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.offer-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px;align-items:center}
+.offer-img{width:100%}
+.kicker{color:#888;letter-spacing:.5px;text-transform:uppercase;font-size:12px}
+.offer .btn{margin-top:10px}
+
+/* Testimonials */
+.testimonials .grid-3{grid-template-columns:repeat(3,1fr)}
+.review{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px;line-height:1.7}
+.user{display:flex;align-items:center;gap:8px;margin-top:8px}
+.user img{width:28px;height:28px}
+
+/* Brands */
+.brands-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brands-row img{filter:grayscale(1);opacity:.75;max-height:36px}
+
+/* App */
+.app-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:center}
+.stores{display:flex;gap:10px;margin-top:10px}
+.app-hero{max-height:120px}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--line);padding:16px 0;background:#fff}
+.footer-wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#555}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero-grid,.offer-wrap,.app-wrap{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr}
+  .menu{display:block}
+  .nav{display:none}
+}

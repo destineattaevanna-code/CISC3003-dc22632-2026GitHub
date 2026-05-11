@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+   <meta charset="utf-8">
+   <title>CISC3003: Practice 04</title>
+   <link rel="stylesheet" href="css/reset.css" />
+   <link rel="stylesheet" href="css/cisc3003-practice04.css" />
+</head>
+<body>
+<header>
+     <h1>Share Your Travels</h1>
+     <p>let us know where you've been</p>
+</header>
+<main>
+   <section>
+  <section>
+  <h2>Share Your Travel Photos</h2>
+  <p>Fill in the form below to describe your travel photo.</p>
+
+  <!-- top link for Item09: click Description -->
+  <p><a href="#description">Description</a></p>
+
+  <form action="process.php" method="post">
+
+    <table class="formTable">
+      <tr>
+        <td class="label"><label for="title">Title</label></td>
+        <td>
+          <input id="title" type="text" name="title"
+                 placeholder="Give your photo a descriptive name" />
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label"><label for="description">Description</label></td>
+        <td>
+          <textarea id="description" name="description" rows="5" cols="61"
+                    placeholder="Adding a rich description will help with search results"></textarea>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">Continent</td>
+        <td>
+          <select name="continent">
+            <option value="">-- Select --</option>
+            <option>Africa</option>
+            <option>Asia</option>
+            <option>Europe</option>
+            <option>North America</option>
+            <option>South America</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">Country</td>
+        <td>
+          <select name="country">
+            <option value="">-- Select --</option>
+            <option>Canada</option>
+            <option>Mexico</option>
+            <option>United States</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">City</td>
+        <td>
+          <select name="city">
+            <option value="">-- Select --</option>
+            <option>Calgary</option>
+            <option>Montreal</option>
+            <option>Toronto</option>
+            <option>Vancouver</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">Copyright?</td>
+        <td>
+          <label><input type="radio" name="copyright" value="copyright"> Copyright</label>
+          &nbsp;&nbsp;
+          <label><input type="radio" name="copyright" value="cc" checked> Creative Commons</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">Creative Commons types</td>
+        <td>
+          <label><input type="checkbox" name="cc[]" value="1"> Attribution</label><br />
+          <label><input type="checkbox" name="cc[]" value="2"> Share-Alike</label><br />
+          <label><input type="checkbox" name="cc[]" value="3"> Noncommercial</label><br />
+          <label><input type="checkbox" name="cc[]" value="4"> No-Derivatives</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">License</td>
+        <td>
+          <label><input type="checkbox" name="license" value="yes"> I accept the software license</label>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">Rate this photo</td>
+        <td><input type="number" min="1" max="5" name="rate" /></td>
+      </tr>
+
+      <tr>
+        <td class="label">Color Collection</td>
+        <td><input type="color" name="color" /></td>
+      </tr>
+
+      <tr>
+        <td class="label">Date Taken</td>
+        <td><input type="date" name="date" /></td>
+      </tr>
+
+      <tr>
+        <td class="label">Time Taken</td>
+        <td><input type="time" name="time" /></td>
+      </tr>
+
+      <tr>
+        <td class="label"></td>
+        <td class="buttons">
+          <input type="submit" value="Submit" class="rounded" />
+          <input type="reset" value="Clear Form" class="rounded" />
+        </td>
+      </tr>
+    </table>
+
+  </form>
+</section>
+``
+   </section>
+</main>  
+
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+.menu-item:hover {
+  transform: translateX(5px);
+  transition: all 0.2s ease-in-out;
+}
+.header.ant-layout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 10% 24px 10%;
+  line-height: 0;
+  background: transparent;
+  height: auto;
+  /* sticky + glass state live in effects.css */
+}
+
+.credit-loader {
+  height: 34px;
+  padding: 0 8px;
+  margin: 0 8px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.credit-loader p {
+  margin-right: 12px !important;
+}
+
+.credit-loader:hover{
+    background-color: #d9d9d9;
+}
+
+.logo {
+  height: 35px;
+  margin: 10px;
+  background-size: contain;
+}
+
+.logo-icon {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #722ed1;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+}
+
+.language-dropdown .ant-dropdown-menu {
+  background-color: transparent !important; /* 设置下拉菜单背景为透明 */
+  color: white !important; /* 设置下拉菜单项的文字颜色为白色 */
+}
+
+.language-button {
+  color: black !important; /* 设置按钮文字颜色为黑色 */
+  background-color: transparent !important; /* 设置按钮背景为透明 */
+  border: none !important; /* 移除按钮边框 */
+  margin-left: 10px;
+}
+
+.menu-user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-item {
+  padding: 0 20px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.menu .ant-menu-item:hover {
+  background-color: #053f75;
+   border-radius: 10px;
+
+}
+
+.menu .ant-menu-item-selected {
+  background-color: transparent !important;
+}
+
+
+.menu-item:hover {
+  transform: translateX(5px);
+}
+
+.user-login {
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.25);
+}
+
+.user-icon {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.user-text {
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+}
+
+#logout-icon{
+  height: 32px;
+  width: 32px;
+}
+
+.ant-menu-title-content {
+  color: #722ed1;
+}
+
+#logout-button {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.header-cart-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 999px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.header-cart-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+.header-cart-link .anticon-shopping-cart {
+  transition: transform 0.25s cubic-bezier(.2,.7,.3,1);
+}
+.header-cart-link:hover .anticon-shopping-cart {
+  transform: scale(1.15) rotate(-6deg);
+}
+.logo-icon, .logo-text {
+  transition: transform 0.3s ease;
+}
+a:hover > .logo-icon { transform: rotate(-10deg) scale(1.05); }
+a:hover > .logo-text { transform: translateX(2px); }
+
+.header-cmdk-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(146, 84, 222, 0.3);
+  color: #722ed1;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.header-cmdk-hint:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: #722ed1;
+  transform: translateY(-1px);
+}
+.header-cmdk-hint kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  background: #fff;
+  color: #722ed1;
+  border-radius: 4px;
+  padding: 1px 5px;
+  border: 1px solid #d3adf7;
+  border-bottom-width: 2px;
+}
+@media (max-width: 768px) {
+  .header-cmdk-hint { display: none; }
+}
+
+.user-info > * {
+  left: 10px;
+}
+.nickname {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  .logo {
+    margin: 0;
+    height: 25px;
+  }
+  .logo-icon {
+    height: 24px;
+    width: 24px;
+  }
+  .logo-text {
+    font-size: 16px;
+  }
+  .user-login {
+    font-size: 16px;
+  }
+  .header {
+    padding: 7% 5%;
+  }
+
+  .nickname {
+    display: none;
+  }
+
+  .user-info {
+    border-left: none;
+  }
+
+  .dark-theme {
+    background-color: #282c34;
+    color: #fff;
+  }
+
+
+
+  .menu-user .ant-drawer .ant-drawer-header {
+    padding: 15px 5%;
+  }
+
+  .menu-user .ant-drawer .ant-drawer-body {
+    padding: 24px 5%;
+  }
+}

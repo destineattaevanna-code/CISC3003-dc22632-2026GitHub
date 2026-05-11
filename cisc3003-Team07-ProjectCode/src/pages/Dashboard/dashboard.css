@@ -1,0 +1,43 @@
+.dashboard-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 16px 12px 48px;
+}
+
+.dash-card {
+  border-radius: 12px !important;
+}
+
+.stat-card {
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: linear-gradient(140deg, #faf5ff 0%, #fff 70%);
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(114, 46, 209, 0.1);
+}
+.stat-label {
+  color: #722ed1;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #22075e;
+}
+
+.dash-credit-box {
+  text-align: center;
+  padding: 8px 16px;
+  border: 1px dashed #d3adf7;
+  border-radius: 10px;
+  background: #f9f0ff;
+}
+.dash-credit {
+  font-size: 28px;
+  font-weight: 700;
+  color: #722ed1;
+  line-height: 1.2;
+}

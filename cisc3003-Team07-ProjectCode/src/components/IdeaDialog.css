@@ -1,0 +1,32 @@
+/* 输入区样式，追加到 src/components/IdeaDialog.css */
+.idea-dialog__inputRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.idea-dialog__input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.idea-dialog__input:focus {
+  outline: none;
+  border-color: #9bbcff;
+  box-shadow: 0 0 0 3px rgba(151, 185, 255, 0.2);
+}
+
+.idea-dialog__send {
+  padding: 10px 14px;
+  background: #1677ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.idea-dialog__send:hover { background: #0f63d6; }

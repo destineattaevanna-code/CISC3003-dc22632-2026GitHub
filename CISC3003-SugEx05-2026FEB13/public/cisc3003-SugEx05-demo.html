@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SugEx05 電商首頁 | CISC3003</title>
+  <meta name="description" content="SugEx05 電商示範首頁：分類、精選商品、最新商品、優惠、見證、合作品牌。" />
+  <link rel="stylesheet" href="../css/cisc3003-SugEx05-demo.css" />
+  <link rel="icon" href="../images/logo.png" />
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./cisc3003-SugEx05-demo.html" aria-label="回到首頁">
+        <img src="../images/logo.png" alt="商店 Logo" class="logo" />
+      </a>
+
+      <nav class="nav-links" aria-label="主選單">
+        <ul>
+          <li><a href="./cisc3003-SugEx05-demo.html#home">Home</a></li>
+          <li><a href="./allProducts.html">All Products</a></li>
+          <li><a href="./productDetails.html">Product Details</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#brands">Brands</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="cart-link" href="#" aria-label="購物車">
+          <img src="../images/cart.png" alt="購物車" />
+        </a>
+        <button class="menu-toggle" aria-label="切換主選單">
+          <img src="../images/menu.png" alt="選單" />
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Banner -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>發現你的<br />下一件最愛</h1>
+        <p>精選好物、限時優惠、快速到貨。簡潔、現代、好逛好買。</p>
+        <div class="cta-group">
+          <a class="btn btn-primary" href="./allProducts.html">立即逛逛</a>
+          <a class="btn btn-outline" href="#latest">最新上架</a>
+        </div>
+        <div class="app-badges">
+          <img src="../images/play-store.png" alt="Google Play" />
+          <img src="../images/app-store.png" alt="App Store" />
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="../images/exclusive.png" alt="主打商品視覺圖" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Categories -->
+  <section id="categories" class="section">
+    <div class="container">
+      <h2 class="section-title">Feature Categories</h2>
+      <div class="grid grid-3">
+        <article class="card cat">
+          <img src="../images/category-1.jpg" alt="分類 1 圖片" />
+          <h3>時尚穿搭</h3>
+        </article>
+        <article class="card cat">
+          <img src="../images/category-2.jpg" alt="分類 2 圖片" />
+          <h3>電子精品</h3>
+        </article>
+        <article class="card cat">
+          <img src="../images/category-3.jpg" alt="分類 3 圖片" />
+          <h3>居家生活</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Products -->
+  <section id="features" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Feature Products</h2>
+      <div class="grid grid-4">
+        <!-- 1 -->
+        <article class="card product">
+          <img src="../images/product-1.jpg" alt="精選商品 1" />
+          <h3>明星商品 1</h3>
+          <p class="price">$399</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <!-- 2 -->
+        <article class="card product">
+          <img src="../images/product-2.jpg" alt="精選商品 2" />
+          <h3>明星商品 2</h3>
+          <p class="price">$499</p>
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <!-- 3 -->
+        <article class="card product">
+          <img src="../images/product-3.jpg" alt="精選商品 3" />
+          <h3>明星商品 3</h3>
+          <p class="price">$299</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <!-- 4 -->
+        <article class="card product">
+          <img src="../images/product-4.jpg" alt="精選商品 4" />
+          <h3>明星商品 4</h3>
+          <p class="price">$699</p>
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Products -->
+  <section id="latest" class="section">
+    <div class="container">
+      <h2 class="section-title">Latest Products</h2>
+      <div class="grid grid-4">
+        <!-- 用到了 product-5 ~ product-12 -->
+        <!-- 你也可以調整商品名稱與價格 -->
+        <article class="card product">
+          <img src="../images/product-5.jpg" alt="最新商品 5" />
+          <h3>新到商品 5</h3>
+          <p class="price">$239</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-6.jpg" alt="最新商品 6" />
+          <h3>新到商品 6</h3>
+          <p class="price">$389</p>
+          <p class="rating" aria-label="評分 3/5">★★★☆☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-7.jpg" alt="最新商品 7" />
+          <h3>新到商品 7</h3>
+          <p class="price">$459</p>
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-8.jpg" alt="最新商品 8" />
+          <h3>新到商品 8</h3>
+          <p class="price">$329</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-9.jpg" alt="最新商品 9" />
+          <h3>新到商品 9</h3>
+          <p class="price">$199</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-10.jpg" alt="最新商品 10" />
+          <h3>新到商品 10</h3>
+          <p class="price">$269</p>
+          <p class="rating" aria-label="評分 3/5">★★★☆☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-11.jpg" alt="最新商品 11" />
+          <h3>新到商品 11</h3>
+          <p class="price">$359</p>
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+        <article class="card product">
+          <img src="../images/product-12.jpg" alt="最新商品 12" />
+          <h3>新到商品 12</h3>
+          <p class="price">$289</p>
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <a class="btn btn-sm" href="./productDetails.html">查看詳情</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exclusive Offer -->
+  <section id="offers" class="section highlight">
+    <div class="container offer">
+      <div class="offer-media">
+        <img src="../images/exclusive.png" alt="獨家優惠商品" />
+      </div>
+      <div class="offer-text">
+        <h2>本週限定優惠</h2>
+        <p>精選商品限時 72 小時，售完不補。把握機會！</p>
+        <p class="price"><span class="price-old">$699</span> <span class="price-new">$449</span></p>
+        <a class="btn btn-primary" href="./productDetails.html">搶購去</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">Customers Love Us</h2>
+      <div class="grid grid-3">
+        <article class="card review">
+          <img class="avatar" src="../images/user-1.png" alt="顧客 1 頭像" />
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <p>出貨很快，品質也很好，已經回購！</p>
+          <p class="author">— Alex</p>
+        </article>
+        <article class="card review">
+          <img class="avatar" src="../images/user-2.png" alt="顧客 2 頭像" />
+          <p class="rating" aria-label="評分 4/5">★★★★☆</p>
+          <p>設計很別緻，包裝用心，推薦！</p>
+          <p class="author">— Bella</p>
+        </article>
+        <article class="card review">
+          <img class="avatar" src="../images/user-3.png" alt="顧客 3 頭像" />
+          <p class="rating" aria-label="評分 5/5">★★★★★</p>
+          <p>客服很耐心，整體購物體驗超讚！</p>
+          <p class="author">— Chris</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Brands -->
+  <section id="brands" class="section section-alt">
+    <div class="container brands">
+      <img src="../images/logo-oppo.png" alt="OPPO 品牌" />
+      <img src="../images/logo-coca-cola.png" alt="Coca-Cola 品牌" />
+      <img src="../images/logo-godrej.png" alt="Godrej 品牌" />
+      <img src="../images/logo-paypal.png" alt="PayPal 品牌" />
+      <img src="../images/logo-philips.png" alt="Philips 品牌" />
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h4>Download Our App</h4>
+        <p>下載行動 App，隨時隨地輕鬆購物</p>
+        <div class="app-badges">
+          <img src="../images/play-store.png" alt="Google Play" />
+          <img src="../images/app-store.png" alt="App Store" />
+        </div>
+      </div>
+      <div class="footer-col">
+        <img src="../images/logo-white.png" alt="白色 Logo" class="footer-logo" />
+        <p>現代、乾淨、好逛好買的電商示範網站。</p>
+      </div>
+      <div class="footer-col">
+        <h4>Useful Links</h4>
+        <ul class="links">
+          <li><a href="./allProducts.html">All Products</a></li>
+          <li><a href="./productDetails.html">Product Details</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul class="links">
+          <li><a href="#" aria-label="Facebook">Facebook</a></li>
+          <li><a href="#" aria-label="Twitter">Twitter</a></li>
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>CISC3003 Web Programming - 2026: <strong>dc226328 - Ma Iat Tim</strong></p>
+      <p>Images used for educational purposes. See <em>images/img-credit.txt</em></p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

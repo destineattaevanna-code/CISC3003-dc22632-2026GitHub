@@ -1,0 +1,18 @@
+# 忽略所有 .log 文件
+*.log
+
+# 忽略特定文件夹
+node_modules/
+build/
+dist/
+course/
+edu_gpt/
+
+# 忽略环境配置文件
+.env
+*.env.local
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
+

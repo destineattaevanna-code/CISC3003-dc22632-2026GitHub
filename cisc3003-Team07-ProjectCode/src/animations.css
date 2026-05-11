@@ -1,0 +1,149 @@
+/* ================================================================
+ * Global animation library — used by Shop, Cart, Home, Dashboard.
+ * All animations are pure CSS for maximum performance.
+ * ================================================================ */
+
+/* ---------- keyframes ---------- */
+@keyframes isv-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes isv-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes isv-fade-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes isv-scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes isv-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.35); }
+  70%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+@keyframes isv-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+@keyframes isv-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-6px) rotate(2deg); }
+}
+@keyframes isv-spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes isv-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes isv-gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+@keyframes isv-shine {
+  0%   { left: -75%; }
+  100% { left: 125%; }
+}
+@keyframes isv-fly-to-cart {
+  0%   { opacity: 1; transform: translate(var(--fx, 0px), var(--fy, 0px)) scale(1); }
+  60%  { opacity: 1; transform: translate(calc(var(--tx, 0px) * 0.6), calc(var(--ty, 0px) * 0.6 - 60px)) scale(0.6); }
+  100% { opacity: 0; transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(0.2); }
+}
+@keyframes isv-confetti-fall {
+  0%   { transform: translate3d(0, -20px, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate3d(var(--cx, 0), 110vh, 0) rotate(var(--cr, 720deg)); opacity: 0; }
+}
+@keyframes isv-confetti-burst {
+  0%   { transform: translate(0, 0) scale(0.4); opacity: 1; }
+  100% { transform: translate(var(--cx, 0), var(--cy, 0)) scale(1); opacity: 0; }
+}
+@keyframes isv-pulse-ring {
+  0%   { transform: scale(0.6); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+@keyframes isv-blob {
+  0%, 100% { border-radius: 42% 58% 70% 30% / 45% 30% 70% 55%; }
+  33%      { border-radius: 70% 30% 46% 54% / 30% 65% 35% 70%; }
+  66%      { border-radius: 30% 60% 70% 40% / 55% 30% 70% 45%; }
+}
+
+/* ---------- helper classes ---------- */
+.isv-anim-fade-in     { animation: isv-fade-in   0.6s ease both; }
+.isv-anim-fade-up     { animation: isv-fade-up   0.6s cubic-bezier(.2,.7,.3,1) both; }
+.isv-anim-fade-down   { animation: isv-fade-down 0.6s cubic-bezier(.2,.7,.3,1) both; }
+.isv-anim-scale-in    { animation: isv-scale-in  0.45s cubic-bezier(.2,.7,.3,1) both; }
+.isv-anim-pop         { animation: isv-pop       0.5s ease both; }
+.isv-anim-bounce      { animation: isv-bounce    1.6s ease-in-out infinite; }
+.isv-anim-float       { animation: isv-float     4s ease-in-out infinite; }
+.isv-anim-spin-slow   { animation: isv-spin-slow 14s linear infinite; }
+
+/* stagger utility — wrap each child of a grid in
+   <div className="isv-stagger" style={{ '--i': index }}>...
+   the children fade-up with a small offset delay */
+.isv-stagger {
+  animation: isv-fade-up 0.55s cubic-bezier(.2,.7,.3,1) both;
+  animation-delay: calc(var(--i, 0) * 60ms);
+}
+
+/* gradient text */
+.isv-gradient-text {
+  background: linear-gradient(120deg, #722ed1, #eb2f96, #fa8c16, #722ed1);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: isv-gradient-pan 8s ease-in-out infinite;
+}
+
+/* shine sweep across a button — apply to a wrapper that has overflow:hidden */
+.isv-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: isv-shine 2.4s ease-in-out infinite;
+}
+
+/* flying clone for "add to cart" */
+.isv-fly {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  animation: isv-fly-to-cart 0.85s cubic-bezier(.55, .055, .35, 1.1) forwards;
+}
+
+/* pulse ring (e.g. around cart icon when added) */
+.isv-pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #722ed1;
+  animation: isv-pulse-ring 0.8s ease-out;
+  pointer-events: none;
+}
+
+/* blob shape utility */
+.isv-blob { animation: isv-blob 14s ease-in-out infinite; }
+
+/* respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,192 @@
+/* ==========================================================
+   style.css  — Global Design System & Components
+   Author: MA IAT TIM (dc226328)
+   Course: CISC3003 Web Programming (2025)
+   Purpose: Site-wide styles shared by all pages.
+   ========================================================== */
+
+/* -------------------- 1) CSS Custom Properties -------------------- */
+:root{
+  /* Brand palette (dark UI) */
+  --bg:#0f172a;           /* slate-900 */
+  --panel:#111827;        /* gray-900 */
+  --card:#1f2937;         /* gray-800 */
+  --border:#334155;       /* slate-700 */
+  --text:#e5e7eb;         /* gray-200 */
+  --muted:#9ca3af;        /* gray-400 */
+  --link:#22d3ee;         /* cyan-400 */
+  --primary:#22d3ee;      /* same as link by default */
+  --accent:#a78bfa;       /* violet-400 */
+  --success:#10b981;      /* emerald-500 */
+  --warning:#f59e0b;      /* amber-500 */
+  --danger:#ef4444;       /* red-500 */
+
+  /* Typography scale (fluid with clamp) */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --fs-900: clamp(2.2rem, 1.2rem + 3vw, 3.2rem);
+  --fs-800: clamp(1.8rem, 1.05rem + 2.2vw, 2.6rem);
+  --fs-700: clamp(1.5rem, 0.95rem + 1.5vw, 2rem);
+  --fs-600: clamp(1.25rem, 0.85rem + 1vw, 1.5rem);
+  --fs-500: 1.125rem;
+  --fs-400: 1rem;
+  --fs-300: .9375rem;
+  --fs-200: .875rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --radius-1: 8px;
+  --radius-2: 12px;
+  --radius-3: 18px;
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(0,0,0,.25);
+  --shadow-2: 0 4px 16px rgba(0,0,0,.35);
+  --shadow-3: 0 10px 30px rgba(0,0,0,.45);
+
+  /* Layout widths */
+  --container: min(1100px, 92vw);
+}
+
+/* -------------------- 2) CSS Reset (modern minimal) -------------------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html, body { height: 100%; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), #0b1220 60%, #070d19);
+  line-height: 1.6;
+}
+img, svg { display: block; max-width: 100%; height: auto; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; margin: 0; }
+button { font: inherit; }
+
+/* Focus visibility */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* -------------------- 3) Typography -------------------- */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+h1 { font-size: var(--fs-900); }
+h2 { font-size: var(--fs-800); }
+h3 { font-size: var(--fs-700); }
+p  { margin: 0 0 var(--space-3); font-size: var(--fs-400); }
+.small { font-size: var(--fs-300); color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* -------------------- 4) Layout helpers -------------------- */
+.container { width: var(--container); margin-inline: auto; }
+.section   { padding-block: var(--space-9); }
+.stack > * + * { margin-top: var(--space-4); }
+.grid-2 { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-6); }
+.grid-3 { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-6); }
+.grid-auto { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: var(--space-6); }
+.center { display:grid; place-items:center; }
+.hidden { display:none !important; }
+
+/* -------------------- 5) Navigation -------------------- */
+.site-header{
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(15,23,42,.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.nav { display:flex; align-items:center; justify-content:space-between; padding-block: var(--space-3); }
+.logo { font-weight: 800; letter-spacing: .4px; color: var(--text); }
+.nav-list { display:flex; gap: var(--space-3); padding:0; margin:0; list-style:none; }
+.nav-list a { color: var(--text); padding: 8px 10px; border-radius: var(--radius-1); }
+.nav-list a:hover { background: #0b1220; text-decoration: none; }
+
+/* Skip link for a11y */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position: fixed; left: 16px; top: 16px;
+  width:auto; height:auto; padding:6px 10px; border-radius: var(--radius-1);
+  background:#000; color:#fff; z-index:999;
+}
+
+/* -------------------- 6) Hero -------------------- */
+.hero{ 
+  display:grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-6);
+  align-items: center; padding-block: var(--space-7);
+}
+.hero .subtitle { color: var(--muted); max-width: 65ch; }
+.hero-photo img{ border-radius: var(--radius-2); border: 1px solid var(--border); box-shadow: var(--shadow-2); }
+.highlight { color: var(--primary); }
+
+/* -------------------- 7) Buttons -------------------- */
+.btn{ 
+  display:inline-block; border:1px solid var(--primary);
+  padding:10px 16px; border-radius: var(--radius-2); transition:.2s ease;
+}
+.btn.primary{ background: var(--primary); color:#062531; font-weight:700; }
+.btn.ghost  { background: transparent; color: var(--primary); }
+.btn.soft   { background: rgba(34,211,238,.12); color: var(--primary); border-color: transparent; }
+.btn.small  { padding: 8px 12px; font-size: var(--fs-300); }
+.btn:hover  { transform: translateY(-1px); filter: brightness(1.02); }
+
+/* -------------------- 8) Cards / Project tiles -------------------- */
+.card{
+  background: var(--card); border:1px solid var(--border);
+  border-radius: var(--radius-2); padding: var(--space-5);
+  box-shadow: var(--shadow-1);
+}
+.project{ background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-2); overflow: hidden; }
+.project img{ aspect-ratio: 16/9; object-fit: cover; }
+.project .body{ padding: var(--space-4); }
+.badge{ display:inline-block; font-size: var(--fs-200); color: #0b2f33; background: #7dd3fc; padding: 2px 8px; border-radius: 999px; }
+
+/* -------------------- 9) Gallery -------------------- */
+.gallery{
+  display:grid; grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: var(--space-3); list-style:none; padding:0; margin: var(--space-4) 0 0;
+}
+.gallery img{ border-radius: var(--radius-2); border: 1px solid var(--border); }
+
+/* -------------------- 10) Tables / Definition blocks -------------------- */
+.table-like{ display:grid; grid-template-columns: 220px 1fr; gap: var(--space-3); }
+.block{ background: var(--card); border:1px solid var(--border); padding: var(--space-5); border-radius: var(--radius-2); margin-block: var(--space-3); }
+.note-success{ background: rgba(16,185,129,.12); border-color: rgba(16,185,129,.4); }
+.note-warning{ background: rgba(245,158,11,.12); border-color: rgba(245,158,11,.4); }
+.note-danger{  background: rgba(239,68,68,.12);  border-color: rgba(239,68,68,.4); }
+
+/* -------------------- 11) Footer -------------------- */
+.site-footer{ border-top:1px solid var(--border); background: var(--panel); }
+.footer-inner{ padding-block: var(--space-4); color: var(--muted); font-size: var(--fs-300); }
+
+/* -------------------- 12) Utilities -------------------- */
+.mt-0{ margin-top:0 !important; }
+.mt-1{ margin-top: var(--space-1) !important; }
+.mt-2{ margin-top: var(--space-2) !important; }
+.mt-3{ margin-top: var(--space-3) !important; }
+.mt-4{ margin-top: var(--space-4) !important; }
+.mt-5{ margin-top: var(--space-5) !important; }
+
+.mb-0{ margin-bottom:0 !important; }
+.mb-3{ margin-bottom: var(--space-3) !important; }
+.mb-5{ margin-bottom: var(--space-5) !important; }
+
+.br-1{ border-radius: var(--radius-1); }
+.br-2{ border-radius: var(--radius-2); }
+.br-3{ border-radius: var(--radius-3); }
+
+.shadow-1{ box-shadow: var(--shadow-1); }
+.shadow-2{ box-shadow: var(--shadow-2); }
+.shadow-3{ box-shadow: var(--shadow-3); }

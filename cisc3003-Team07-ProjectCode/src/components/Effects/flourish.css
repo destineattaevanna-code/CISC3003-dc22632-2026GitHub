@@ -1,0 +1,257 @@
+/* ============================================================================
+ * iSuperviz — Premium flourishes (no-layout-shift, GPU-only transforms)
+ *
+ * Every animation below runs on `transform` + `opacity` only, and is gated with
+ * `prefers-reduced-motion: reduce` so it degrades gracefully.
+ * ========================================================================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+/* --- Gradient sheen that travels across text on hover ---------------------- */
+.isv-sheen {
+  background: linear-gradient(120deg, #722ed1 0%, #eb2f96 45%, #fa8c16 100%);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  animation: isv-sheen-idle 10s ease-in-out infinite;
+  transition: background-position 0.4s ease;
+}
+.isv-sheen:hover {
+  animation-play-state: paused;
+  background-position: 100% 50%;
+}
+@keyframes isv-sheen-idle {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* --- Soft aurora blob background (drop behind any section) ----------------- */
+.isv-aurora {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.isv-aurora::before,
+.isv-aurora::after {
+  content: '';
+  position: absolute;
+  width: 42vw; height: 42vw;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  will-change: transform;
+}
+.isv-aurora::before {
+  left: -10vw; top: -10vw;
+  background: radial-gradient(circle, #b37feb 0%, transparent 62%);
+  animation: isv-aurora-1 24s ease-in-out infinite;
+}
+.isv-aurora::after {
+  right: -12vw; bottom: -12vw;
+  background: radial-gradient(circle, #ffadd2 0%, transparent 60%);
+  animation: isv-aurora-2 32s ease-in-out infinite;
+}
+@keyframes isv-aurora-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(6vw, 4vw, 0) scale(1.15); }
+}
+@keyframes isv-aurora-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50%      { transform: translate3d(-5vw, -6vw, 0) scale(1.1); }
+}
+
+/* --- Shimmer underline — ideal for hero buttons ---------------------------- */
+.isv-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.isv-shimmer::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 45%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 55%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.isv-shimmer:hover::after {
+  animation: isv-shimmer-run 0.9s ease;
+}
+@keyframes isv-shimmer-run {
+  from { transform: translateX(-120%); }
+  to   { transform: translateX(120%); }
+}
+
+/* --- Paper card: tilt + rising shadow on hover ----------------------------- */
+.video-card {
+  transition: transform 0.35s cubic-bezier(.2,.7,.3,1),
+              box-shadow 0.35s cubic-bezier(.2,.7,.3,1),
+              background-color 0.2s ease !important;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+.video-card:hover {
+  transform: translate3d(0, -2px, 0) !important;
+  box-shadow: 0 18px 40px rgba(114, 46, 209, 0.14),
+              0 6px 14px rgba(114, 46, 209, 0.08);
+  background-color: #faf5ff !important;
+}
+.video-card img {
+  transition: transform 0.45s cubic-bezier(.22,.61,.36,1), filter 0.35s ease;
+  will-change: transform;
+}
+.video-card:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+/* --- Idea card sparkle --------------------------------------------------- */
+.idea-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.idea-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(114,46,209,0.0), rgba(114,46,209,0.35), rgba(250,139,0,0.3));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.idea-card:hover::before { opacity: 1; }
+
+/* --- Floating cursor light (add .isv-cursor-light to the section) ---------- */
+.isv-cursor-light {
+  position: relative;
+  overflow: hidden;
+}
+.isv-cursor-light::before {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  inset: 0;
+  background:
+    radial-gradient(
+      360px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(146, 84, 222, 0.18),
+      transparent 60%
+    );
+  z-index: 0;
+  transition: background 0.12s linear;
+}
+
+/* --- Gentle fade+lift for paragraphs that enter the viewport -------------- */
+.isv-reveal-soft {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+  transition: opacity 0.6s cubic-bezier(.22,.61,.36,1),
+              transform  0.6s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.isv-reveal-soft.is-shown {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* --- "Breathing" halo around featured chips ------------------------------- */
+.isv-halo {
+  position: relative;
+}
+.isv-halo::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(146,84,222,0.35), transparent 70%);
+  filter: blur(8px);
+  z-index: -1;
+  animation: isv-halo-pulse 2.6s ease-in-out infinite;
+}
+@keyframes isv-halo-pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.55; }
+  50%      { transform: scale(1.07); opacity: 0.85; }
+}
+
+}  /* end @media prefers-reduced-motion: no-preference */
+
+/* --- Home reviewer chip ---------------------------------------------------- */
+.isv-reviewer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 94%;
+  padding: 6px 14px 6px 6px;
+  background: rgba(255,255,255,0.9);
+  border: 1px dashed #d3adf7;
+  border-radius: 999px;
+  color: #531dab;
+  font-size: 13px;
+  box-shadow: 0 6px 18px rgba(114,46,209,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.isv-reviewer-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(114,46,209,0.18);
+}
+.isv-reviewer-chip-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  padding: 4px 10px;
+  background: linear-gradient(135deg,#722ed1 0%,#eb2f96 100%);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+.isv-reviewer-chip-text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  line-height: 1.7;
+}
+.isv-reviewer-chip code {
+  background: #f9f0ff;
+  color: #531dab;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.isv-reviewer-chip-sep {
+  color: #b37feb;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  .isv-reviewer-chip { font-size: 12px; }
+}
+
+/* ---------- Reduced-motion safe fallbacks ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .isv-sheen { color: #722ed1; background: none; -webkit-background-clip: initial; }
+  .isv-reveal-soft { opacity: 1; transform: none; }
+  .isv-aurora::before, .isv-aurora::after { animation: none; }
+}

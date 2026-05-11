@@ -1,0 +1,308 @@
+/* ============================================================
+ * Shop page styles + animations
+ * ============================================================ */
+.shop-page {
+  position: relative;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+  overflow: hidden;
+}
+
+/* decorative animated blobs in the background */
+.shop-blob {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  filter: blur(70px);
+  opacity: 0.45;
+  z-index: 0;
+  pointer-events: none;
+}
+.shop-blob--a {
+  top: -80px;
+  left: -120px;
+  background: radial-gradient(circle at 30% 30%, #d3adf7, transparent 60%);
+}
+.shop-blob--b {
+  bottom: -100px;
+  right: -120px;
+  background: radial-gradient(circle at 70% 30%, #ffd6e7, transparent 60%);
+  animation-direction: reverse;
+}
+
+.shop-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.shop-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* category pill row */
+.shop-pills {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+.shop-pill {
+  border: 1px solid #efe5ff;
+  background: #fff;
+  color: #722ed1;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.shop-pill:hover {
+  border-color: #b37feb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(114, 46, 209, 0.15);
+}
+.shop-pill--active {
+  background: linear-gradient(135deg, #722ed1, #eb2f96);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(114, 46, 209, 0.35);
+}
+
+/* ===== product card (now a plain div, not AntD Card) ===== */
+.product-card {
+  position: relative;
+  z-index: 2;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #f0f0f0;
+  background: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.3s cubic-bezier(.2,.7,.3,1),
+    box-shadow 0.3s cubic-bezier(.2,.7,.3,1),
+    border-color 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(114, 46, 209, 0.22);
+  border-color: #d3adf7;
+}
+
+.product-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Whole card is clickable to open the detail page. */
+.product-card-clickable {
+  cursor: pointer;
+  outline: none;
+}
+.product-card-clickable:focus-visible {
+  border-color: #722ed1;
+  box-shadow: 0 0 0 3px rgba(114, 46, 209, 0.25);
+}
+
+/* Decorative overlays must never capture clicks. */
+.product-cover-overlay,
+.product-cover-glow,
+.product-cover::before,
+.product-cover-emoji,
+.product-badge,
+.product-cat-pill {
+  pointer-events: none;
+}
+
+/* Small "view" icon button next to Add. */
+.product-view-btn {
+  border-color: #d3adf7 !important;
+  color: #722ed1 !important;
+  transition: all 0.2s ease;
+}
+.product-view-btn:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #722ed1, #9254de) !important;
+  border-color: transparent !important;
+  transform: translateY(-1px);
+}
+
+/* gradient cover area (gradient is the fallback under the photo) */
+.product-cover {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: 200% 200%;
+  animation: isv-gradient-pan 9s ease-in-out infinite;
+}
+
+/* shimmer placeholder visible while photo loads */
+.product-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(110deg, rgba(255,255,255,0) 30%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 70%);
+  background-size: 200% 100%;
+  animation: isv-shimmer 1.6s linear infinite;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* the actual photo */
+.product-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transform: scale(1.02);
+  transition: transform 0.7s cubic-bezier(.2,.7,.3,1), filter 0.4s ease, opacity 0.5s ease;
+  animation: isv-fade-in 0.5s ease both;
+}
+.product-card:hover .product-cover-img {
+  transform: scale(1.12);
+  filter: saturate(1.1);
+}
+
+/* dark gradient overlay so badges & emoji stay readable */
+.product-cover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.45) 100%),
+    linear-gradient(135deg, rgba(114,46,209,0.18), rgba(235,47,150,0.12) 60%, transparent);
+  pointer-events: none;
+}
+
+/* emoji as a small floating badge in the corner (no longer dominant) */
+.product-cover-emoji {
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  z-index: 4;
+  font-size: 38px;
+  line-height: 1;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.45s cubic-bezier(.2,.7,.3,1);
+}
+.product-card:hover .product-cover-emoji {
+  transform: translateY(-3px) scale(1.08) rotate(-6deg);
+}
+
+/* hover glow */
+.product-cover-glow {
+  position: absolute;
+  inset: -20%;
+  z-index: 3;
+  background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.35), transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.product-card:hover .product-cover-glow { opacity: 1; }
+
+/* badge ribbon */
+.product-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.95);
+  color: #722ed1;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  text-transform: uppercase;
+}
+
+/* category pill on cover */
+.product-cat-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.3px;
+}
+
+/* price area */
+.product-price-amt {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(120deg, #722ed1, #eb2f96);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* add-to-cart button shine */
+.product-add-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #722ed1, #9254de) !important;
+  border: none !important;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+.product-add-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.45), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.6s ease;
+}
+.product-add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(114, 46, 209, 0.4);
+}
+.product-add-btn:hover::after {
+  left: 125%;
+}
+
+@media (max-width: 576px) {
+  .product-cover { height: 140px; }
+  .product-cover-emoji { font-size: 60px; }
+  .shop-blob { display: none; }
+}

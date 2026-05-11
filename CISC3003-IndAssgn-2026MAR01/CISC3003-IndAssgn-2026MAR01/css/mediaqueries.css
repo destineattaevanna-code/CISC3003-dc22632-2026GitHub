@@ -1,0 +1,79 @@
+/* ==========================================================
+   mediaqueries.css — Responsive Tweaks & Breakpoints
+   Author: MA IAT TIM (dc226328)
+   ========================================================== */
+
+/* ---------- XXL ~ Desktop wide (≤ 1200px) ---------- */
+@media (max-width: 1200px){
+  :root{
+    --container: min(1040px, 94vw);
+  }
+  .hero { gap: 28px; }
+  .grid-3 { gap: 20px; }
+}
+
+/* ---------- XL ~ Laptop (≤ 900px) ---------- */
+@media (max-width: 900px){
+  :root{
+    --fs-900: clamp(2rem, 1.4rem + 2.2vw, 2.6rem);
+    --fs-800: clamp(1.6rem, 1.1rem + 1.6vw, 2.1rem);
+    --container: min(820px, 94vw);
+  }
+
+  .nav { padding-block: 10px; }
+  .nav-list { flex-wrap: wrap; gap: 10px; }
+
+  .hero { grid-template-columns: 1fr; padding-block: 28px; }
+  .hero-photo { order: -1; } /* 圖片在上，文字在下也可以改順序 */
+
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+
+  .projects-grid, .gallery { grid-template-columns: 1fr 1fr !important; }
+  .table-like { grid-template-columns: 1fr; }
+}
+
+/* ---------- MD ~ Tablet (≤ 600px) ---------- */
+@media (max-width: 600px){
+  :root{
+    --fs-900: clamp(1.8rem, 1.2rem + 2vw, 2.2rem);
+    --fs-800: clamp(1.4rem, 1.05rem + 1.4vw, 1.8rem);
+    --fs-700: clamp(1.2rem, 1rem + 1vw, 1.5rem);
+  }
+
+  .nav { padding-inline: 0; }
+  .logo { font-size: 1.05rem; }
+  .nav-list a { padding: 6px 8px; }
+
+  .section { padding-block: 32px; }
+  .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .projects-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cards { display:grid; grid-template-columns: 1fr; gap: 14px; }
+  .cta-group { display:flex; flex-wrap: wrap; gap: 8px; }
+  .btn { padding: 9px 14px; }
+  .btn.small { padding: 7px 10px; }
+}
+
+/* ---------- SM ~ Small phone (≤ 400px) ---------- */
+@media (max-width: 400px){
+  .nav-list { gap: 6px; }
+  .nav-list a { padding: 6px 6px; }
+  .hero .subtitle { font-size: .95rem; }
+  .table-like { gap: 8px; }
+  .footer-inner { padding-block: 12px; }
+}
+
+/* ---------- Micro-breakpoints（細節） ---------- */
+
+/* 讓過長網址在小螢幕不爆版 */
+@media (max-width: 520px){
+  a { word-break: break-all; }
+}
+
+/* 卡片群在 740px 時改為兩欄 */
+@media (max-width: 740px){
+  .cards { display:grid; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .cards { grid-template-columns: 1fr; }
+}

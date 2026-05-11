@@ -1,0 +1,491 @@
+/* paperdetail.css 添加以下样式 */
+.text p {
+    margin-bottom: 0;
+}
+.messageLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text p {
+    margin-bottom: 0;
+}
+
+#detail-container {
+    padding: 0 5%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    height: 80vh;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.contentCardBody {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-splitter {
+    flex: 1;
+    height: 100%;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.03),
+        0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+/* Left content area */
+.content-card {
+    height: 100%;
+    overflow-y: auto;
+}
+
+#fix-button {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  z-index: 1000
+}
+
+.contentCardBody .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 90%;
+    width: 100%;
+    padding: 10px 24px;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(250, 250, 250, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+/* Right AI Assistant area with top shadow */
+.contentCardBody .ant-card-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: linear-gradient(to bottom, 
+        rgba(114, 46, 209, 0.02) 0%,
+        rgba(114, 46, 209, 0.01) 30%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* AI Assistant title styling */
+.contentCardBody .cardTitle {
+    background: linear-gradient(135deg, rgba(114, 46, 209, 0.08) 0%, rgba(146, 84, 222, 0.06) 100%) !important;
+    border-radius: 8px 8px 0 0 !important;
+    border-bottom: 1px solid rgba(114, 46, 209, 0.08);
+}
+
+.contentCardBody .cardTitle h4 {
+    color: #722ed1 !important;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+#PDFCardBody .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 90%;
+    width: 100%;
+    padding: 0 !important;
+}
+
+.messages {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    padding: 16px 0;
+}
+
+.message {
+    margin-bottom: 14px;
+    padding: 12px 16px;
+    border-radius: 16px;
+    max-width: 85%;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.message:hover {
+    transform: translateY(-0.5px);
+}
+
+/* User message bubble */
+.message-user {
+    background: linear-gradient(135deg, rgba(114, 46, 209, 0.12) 0%, rgba(146, 84, 222, 0.08) 100%);
+    color: #531dab;
+    border: 1px solid rgba(114, 46, 209, 0.15);
+    box-shadow: 0 1px 4px rgba(114, 46, 209, 0.08);
+}
+
+.message-user:hover {
+    background: linear-gradient(135deg, rgba(114, 46, 209, 0.15) 0%, rgba(146, 84, 222, 0.1) 100%);
+    box-shadow: 0 2px 8px rgba(114, 46, 209, 0.12) !important;
+}
+
+/* AI Assistant message bubble */
+.message-assistant {
+    background: rgba(248, 249, 250, 0.6);
+    color: #4a5568;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.message-assistant:hover {
+    background: rgba(248, 249, 250, 0.8);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06) !important;
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.text {
+    margin: 0;
+    word-break: break-word;
+}
+
+.cardTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Paper title header area */
+.paper-detail-header {
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+}
+
+.paper-notes {
+    padding-top: 2px;
+}
+
+.paper-notes > div {
+    margin-bottom: 12px !important;
+}
+
+.paper-notes h3.ant-typography {
+    margin-top: 0 !important;
+    margin-bottom: 6px !important;
+}
+
+/* Ideas卡片样式 */
+.idea-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.idea-card:hover {
+    transform: translateY(-2px);
+    box-shadow: none !important;
+}
+
+/* PaperDetail: remove "boxed" look for Novelty/Feasibility ratings (Suggested Ideas) */
+.pd-rating-wrap,
+.pd-ratings-row,
+.pd-ratings-list,
+.pd-rating-item,
+.pd-ratings-row .ant-rate,
+.pd-ratings-row .ant-typography,
+.pd-ratings-row * {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+.idea-card .pd-rating-wrap,
+.idea-card .pd-rating-wrap * {
+    border: 0 !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+}
+
+.idea-card .pd-rating-wrap::before,
+.idea-card .pd-rating-wrap::after,
+.idea-card .pd-rating-wrap *::before,
+.idea-card .pd-rating-wrap *::after {
+    content: none !important;
+    display: none !important;
+}
+
+.pd-rating-wrap {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.pd-ratings-row,
+.pd-ratings-list,
+.pd-rating-item {
+    padding: 0 !important;
+}
+
+.pd-ratings-row::before,
+.pd-ratings-row::after,
+.pd-ratings-row *::before,
+.pd-ratings-row *::after,
+.pd-ratings-list::before,
+.pd-ratings-list::after,
+.pd-rating-item::before,
+.pd-rating-item::after,
+.pd-rating-wrap::before,
+.pd-rating-wrap::after {
+    content: none !important;
+    display: none !important;
+}
+
+.pd-ratings-row .ant-rate-star {
+    margin-inline-end: 2px;
+}
+
+.pd-star-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Stop button (purple circle with white square) */
+.pd-stop-btn {
+    background-color: #9254de !important;
+    border-color: #9254de !important;
+    box-shadow: 0 4px 12px rgba(146, 84, 222, 0.18) !important;
+}
+
+.pd-stop-btn:hover:not(:disabled) {
+    background-color: #7a3dd0 !important;
+    border-color: #7a3dd0 !important;
+}
+
+.pd-stop-btn .pd-stop-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* 自定义滚动条 */
+#detail-container ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+#detail-container ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+#detail-container ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+#detail-container ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* AI Assistant messages scrollbar */
+.messages::-webkit-scrollbar {
+    width: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background: rgba(114, 46, 209, 0.15);
+    border-radius: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(114, 46, 209, 0.25);
+}
+
+/* AI Assistant input area */
+.contentCardBody .ant-card-body > div:last-child {
+    background: rgba(250, 250, 250, 0.4) !important;
+    border-top: 1px solid rgba(114, 46, 209, 0.06) !important;
+    padding: 18px 20px !important;
+}
+
+.contentCardBody .ant-card-body > div:last-child > div > div {
+    border: 1px solid rgba(114, 46, 209, 0.1) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.contentCardBody .ant-card-body > div:last-child > div > div:focus-within {
+    border-color: rgba(114, 46, 209, 0.2) !important;
+    box-shadow: 0 2px 8px rgba(114, 46, 209, 0.08) !important;
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Send button styling */
+.contentCardBody button[type="button"][shape="circle"] {
+    background: linear-gradient(135deg, rgba(114, 46, 209, 0.85) 0%, rgba(146, 84, 222, 0.85) 100%) !important;
+    border: none !important;
+    box-shadow: 0 1px 4px rgba(114, 46, 209, 0.15) !important;
+    transition: all 0.3s ease !important;
+}
+
+.contentCardBody button[type="button"][shape="circle"]:hover:not(:disabled) {
+    transform: translateY(-1px) !important;
+    background: linear-gradient(135deg, rgba(114, 46, 209, 0.95) 0%, rgba(146, 84, 222, 0.95) 100%) !important;
+    box-shadow: 0 2px 8px rgba(114, 46, 209, 0.2) !important;
+}
+
+/* KaTeX math formula overflow fix */
+.katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    padding: 4px 0;
+}
+
+.katex-display > .katex {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.text .katex-display {
+    margin: 0.5em 0;
+}
+
+.message .katex-html {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.katex {
+    font-size: 1em;
+}
+
+/* PDF / Thinking Notes toggle */
+@keyframes toggleGradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.pd-view-toggle {
+    padding: 10px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    flex-shrink: 0;
+    background: #fff;
+}
+
+.pd-view-toggle .ant-segmented {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 3px;
+}
+
+.pd-view-toggle .ant-segmented-item {
+    border-radius: 6px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.pd-view-toggle .ant-segmented-item span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.pd-view-toggle .ant-segmented-item-selected {
+    border-radius: 6px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pd-view-toggle.pd-mode-notes .ant-segmented-item-selected {
+    background: linear-gradient(135deg, #722ed1 0%, #531dab 35%, #9254de 65%, #722ed1 100%) !important;
+    background-size: 300% 300% !important;
+    animation: toggleGradientFlow 4s ease infinite !important;
+    color: #fff !important;
+    box-shadow: 0 2px 10px rgba(114, 46, 209, 0.35);
+}
+
+.pd-view-toggle.pd-mode-notes .ant-segmented-item-selected span,
+.pd-view-toggle.pd-mode-notes .ant-segmented-item-selected .anticon {
+    color: #fff !important;
+}
+
+.pd-view-toggle.pd-mode-pdf .ant-segmented-item-selected {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 35%, #e74c3c 65%, #ff6b6b 100%) !important;
+    background-size: 300% 300% !important;
+    animation: toggleGradientFlow 4s ease infinite !important;
+    color: #fff !important;
+    box-shadow: 0 2px 10px rgba(231, 76, 60, 0.35);
+}
+
+.pd-view-toggle.pd-mode-pdf .ant-segmented-item-selected span,
+.pd-view-toggle.pd-mode-pdf .ant-segmented-item-selected .anticon {
+    color: #fff !important;
+}
+
+/* PDF viewer */
+.pd-pdf-container {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pd-pdf-iframe {
+    width: 100%;
+    flex: 1;
+    border: none;
+    min-height: 0;
+}
+
+.pd-pdf-unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #999;
+    font-size: 14px;
+}
+
+/* 响应式调整 */
+@media (max-width: 576px) {
+    .contentCardBody .ant-card-body {
+        padding: 10px;
+    }
+
+    #detail-container {
+        padding: 2%;
+    }
+}
+
+@keyframes feedbackPop {
+  0% { transform: scale(1); opacity: 1; }
+  40% { transform: scale(1.6); opacity: 1; }
+  100% { transform: scale(0.8); opacity: 0; }
+}

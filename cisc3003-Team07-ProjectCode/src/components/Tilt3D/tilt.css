@@ -1,0 +1,33 @@
+.tilt-3d {
+  perspective: 800px;
+  transform-style: preserve-3d;
+  display: block;
+}
+.tilt-3d-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: perspective(800px) rotateX(0) rotateY(0) translateZ(0);
+  transition: transform 0.45s cubic-bezier(.2,.7,.3,1);
+  will-change: transform;
+}
+/* Once the cursor is over the tilt area we suppress the slow ease so the
+   element follows the mouse smoothly. */
+.tilt-3d:hover .tilt-3d-inner {
+  transition: transform 0.06s linear;
+}
+.tilt-3d-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  mix-blend-mode: overlay;
+  z-index: 10;
+}
+
+/* Helper utility classes for elements you want pushed forward in 3D space. */
+.tilt-pop-1 { transform: translateZ(20px); }
+.tilt-pop-2 { transform: translateZ(40px); }
+.tilt-pop-3 { transform: translateZ(60px); }
+.tilt-pop-4 { transform: translateZ(80px); }

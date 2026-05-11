@@ -1,0 +1,10 @@
+
+.terms-container .ant-typography {
+    color: black;
+}
+
+@media (max-width: 576px) {
+    .terms-container {
+        padding-left: 10%;
+    }
+}
