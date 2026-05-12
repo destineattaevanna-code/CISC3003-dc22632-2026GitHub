@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS paper02a_db;
+USE paper02a_db;
+
+CREATE TABLE IF NOT EXISTS feedback (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    gender VARCHAR(20) NOT NULL,
+    department VARCHAR(50) NOT NULL,
+    interests VARCHAR(255),
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
